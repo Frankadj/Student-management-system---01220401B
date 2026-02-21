@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.sms.ui.controllers.StudentsController"
+            prefWidth="1000" prefHeight="680">
+
+    <top>
+        <VBox style="-fx-background-color: #2980b9; -fx-padding: 14;">
+            <Label text="Students" style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;"/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="10" style="-fx-padding: 14;">
+
+            <!-- Search and filter bar -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <TextField fx:id="searchField" promptText="Search by ID or Name" prefWidth="220"
+                           onKeyReleased="#onSearch"/>
+                <ComboBox fx:id="filterProgramme" promptText="Programme" prefWidth="150" onAction="#onFilter"/>
+                <ComboBox fx:id="filterLevel" promptText="Level" prefWidth="100" onAction="#onFilter"/>
+                <ComboBox fx:id="filterStatus" promptText="Status" prefWidth="100" onAction="#onFilter"/>
+                <Button text="Clear" onAction="#onClearFilter"/>
+                <Button text="Sort by GPA ↓" onAction="#onSortGpa"/>
+                <Button text="Sort by Name" onAction="#onSortName"/>
+            </HBox>
+
+            <!-- Table -->
+            <TableView fx:id="studentTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId"      text="ID"          prefWidth="100"/>
+                    <TableColumn fx:id="colName"    text="Full Name"   prefWidth="160"/>
+                    <TableColumn fx:id="colProg"    text="Programme"   prefWidth="150"/>
+                    <TableColumn fx:id="colLevel"   text="Level"       prefWidth="60"/>
+                    <TableColumn fx:id="colGpa"     text="GPA"         prefWidth="60"/>
+                    <TableColumn fx:id="colEmail"   text="Email"       prefWidth="160"/>
+                    <TableColumn fx:id="colPhone"   text="Phone"       prefWidth="110"/>
+                    <TableColumn fx:id="colStatus"  text="Status"      prefWidth="80"/>
+                    <TableColumn fx:id="colDate"    text="Date Added"  prefWidth="100"/>
+                </columns>
+            </TableView>
+
+            <!-- Action buttons -->
+            <HBox spacing="10">
+                <Button text="Add Student"  onAction="#onAdd"
+                        style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
+                <Button text="Edit Student" onAction="#onEdit"
+                        style="-fx-background-color: #2980b9; -fx-text-fill: white;"/>
+                <Button text="Delete Student" onAction="#onDelete"
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+                <Button text="Refresh" onAction="#onRefresh"/>
+            </HBox>
+
+        </VBox>
+    </center>
+</BorderPane>

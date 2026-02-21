@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.sms.ui.controllers.ImportExportController"
+            prefWidth="700" prefHeight="500">
+    <top>
+        <VBox style="-fx-background-color: #16a085; -fx-padding: 14;">
+            <Label text="Import / Export" style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;"/>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="20" style="-fx-padding: 30;">
+            <Label text="EXPORT" style="-fx-font-weight: bold; -fx-font-size: 14;"/>
+            <HBox spacing="10">
+                <Button text="Export All Students to CSV" onAction="#onExportAll"
+                        style="-fx-background-color: #16a085; -fx-text-fill: white; -fx-padding: 8 16;"/>
+                <Button text="Export Top Performers to CSV" onAction="#onExportTop"
+                        style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-padding: 8 16;"/>
+                <Button text="Export At-Risk to CSV" onAction="#onExportAtRisk"
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-padding: 8 16;"/>
+            </HBox>
+            <Label text="IMPORT" style="-fx-font-weight: bold; -fx-font-size: 14;"/>
+            <HBox spacing="10">
+                <Button text="Import Students from CSV" onAction="#onImport"
+                        style="-fx-background-color: #d35400; -fx-text-fill: white; -fx-padding: 8 16;"/>
+            </HBox>
+            <Label fx:id="resultLabel" text="" style="-fx-text-fill: #2c3e50; -fx-font-size: 13; -fx-wrap-text: true;"/>
+        </VBox>
+    </center>
+</BorderPane>

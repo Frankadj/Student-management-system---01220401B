@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.sms.ui.controllers.StudentFormController"
+      spacing="12" style="-fx-padding: 24; -fx-background-color: #f9f9f9;"
+      prefWidth="420">
+
+    <Label text="Student Details" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+    <Label text="Student ID"/>
+    <TextField fx:id="fieldId" promptText="e.g. STU001"/>
+    <Label text="Full Name"/>
+    <TextField fx:id="fieldName" promptText="e.g. John Mensah"/>
+    <Label text="Programme"/>
+    <TextField fx:id="fieldProgramme" promptText="e.g. Computer Science"/>
+    <Label text="Level"/>
+    <ComboBox fx:id="fieldLevel" prefWidth="380"/>
+    <Label text="GPA"/>
+    <TextField fx:id="fieldGpa" promptText="0.0 to 4.0"/>
+    <Label text="Email"/>
+    <TextField fx:id="fieldEmail" promptText="e.g. john@email.com"/>
+    <Label text="Phone Number"/>
+    <TextField fx:id="fieldPhone" promptText="10 to 15 digits"/>
+    <Label text="Status"/>
+    <ComboBox fx:id="fieldStatus" prefWidth="380"/>
+    <Label fx:id="errorLabel" text="" style="-fx-text-fill: red; -fx-wrap-text: true;"/>
+    <HBox spacing="10">
+        <Button text="Save" onAction="#onSave"
+                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-padding: 8 24;"/>
+        <Button text="Cancel" onAction="#onCancel" style="-fx-padding: 8 24;"/>
+    </HBox>
+</VBox>

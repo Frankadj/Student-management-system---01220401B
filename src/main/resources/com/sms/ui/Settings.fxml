@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.sms.ui.controllers.SettingsController"
+            prefWidth="500" prefHeight="300">
+    <top>
+        <VBox style="-fx-background-color: #d35400; -fx-padding: 14;">
+            <Label text="Settings" style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;"/>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="16" style="-fx-padding: 30;">
+            <Label text="At-Risk GPA Threshold" style="-fx-font-size: 14;"/>
+            <TextField fx:id="thresholdField" promptText="Default is 2.0" prefWidth="200"/>
+            <Label text="This value is used in the At-Risk Students report." style="-fx-text-fill: #777;"/>
+            <Button text="Save Settings" onAction="#onSave"
+                    style="-fx-background-color: #d35400; -fx-text-fill: white; -fx-padding: 8 24;"/>
+            <Label fx:id="statusLabel" text="" style="-fx-text-fill: green;"/>
+        </VBox>
+    </center>
+</BorderPane>

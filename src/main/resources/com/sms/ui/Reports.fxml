@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.sms.ui.controllers.ReportsController"
+            prefWidth="900" prefHeight="600">
+    <top>
+        <VBox style="-fx-background-color: #8e44ad; -fx-padding: 14;">
+            <Label text="Reports" style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;"/>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="10" style="-fx-padding: 14;">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <ComboBox fx:id="reportType" promptText="Select Report" prefWidth="200" onAction="#onReportTypeChanged"/>
+                <TextField fx:id="filterProgramme" promptText="Programme" prefWidth="150"/>
+                <ComboBox fx:id="filterLevel" promptText="Level" prefWidth="100"/>
+                <TextField fx:id="thresholdField" promptText="GPA Threshold" prefWidth="120"/>
+                <Button text="Run Report" onAction="#onRunReport"
+                        style="-fx-background-color: #8e44ad; -fx-text-fill: white;"/>
+                <Button text="Export Report" onAction="#onExport"
+                        style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
+            </HBox>
+            <TableView fx:id="reportTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="col1" text="Column 1" prefWidth="200"/>
+                    <TableColumn fx:id="col2" text="Column 2" prefWidth="200"/>
+                    <TableColumn fx:id="col3" text="Column 3" prefWidth="200"/>
+                    <TableColumn fx:id="col4" text="Column 4" prefWidth="200"/>
+                </columns>
+            </TableView>
+            <Label fx:id="statusLabel" text="" style="-fx-text-fill: #555;"/>
+        </VBox>
+    </center>
+</BorderPane>

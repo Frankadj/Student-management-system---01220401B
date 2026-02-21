@@ -1,0 +1,8 @@
+JDK Version: 17
+VM Options for Windows:
+--module-path "C:\javafx\javafx-sdk-21\lib" --add-modules javafx.controls,javafx.fxml
+
+VM Options for Linux:
+--module-path "/home/user/javafx-sdk-21/lib" --add-modules javafx.controls,javafx.fxml
+
+Main Class: com.sms.MainApp
